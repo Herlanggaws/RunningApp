@@ -3,12 +3,13 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("androidx.navigation.safeargs.kotlin")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
     namespace = "com.herlanggaws.runningapp"
     compileSdk = 34
-
+    compileSdkVersion(34)
     defaultConfig {
         applicationId = "com.herlanggaws.runningapp"
         minSdk = 24
@@ -86,13 +87,16 @@ dependencies {
     implementation("com.google.android.gms:play-services-maps:17.0.0")
 
     // Dagger Core
-    implementation("com.google.dagger:dagger:2.48.1")
-    kapt("com.google.dagger:dagger-compiler:2.48.1")
+    implementation("com.google.dagger:dagger:2.44")
+    kapt("com.google.dagger:dagger-compiler:2.44")
 
     // Dagger Android
-    api("com.google.dagger:dagger-android:2.48.1")
-    api("com.google.dagger:dagger-android-support:2.48.1")
-    kapt("com.google.dagger:dagger-android-processor:2.48.1")
+    api("com.google.dagger:dagger-android:2.44")
+    api("com.google.dagger:dagger-android-support:2.44")
+    kapt("com.google.dagger:dagger-android-processor:2.44")
+
+    implementation("com.google.dagger:hilt-android:2.48")
+    kapt("com.google.dagger:hilt-compiler:2.48")
 
     // Easy Permissions
     implementation("pub.devrel:easypermissions:3.0.0")
