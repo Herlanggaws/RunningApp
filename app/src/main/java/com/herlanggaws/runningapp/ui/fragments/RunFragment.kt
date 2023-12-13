@@ -17,34 +17,4 @@ class RunFragment : Fragment(R.layout.fragment_run) {
 
 	private val viewModel: MainViewModel by viewModels()
 
-	private var hashMap = HashMap<String,Int>()
-
-}
-
-class ImageCache(capacity: Int) {
-	private val cache2: LinkedHashMap<Int, Int> = object : LinkedHashMap<Int, Int>(capacity, 0.75f, true) {
-		override fun removeEldestEntry(eldest: MutableMap.MutableEntry<Int, Int>?): Boolean {
-			return size > capacity
-		}
-	}
-	private val cache: LinkedHashMap<Int, Int> = object : LinkedHashMap<Int, Int>(capacity, 0.75f, true) {
-		override fun removeEldestEntry(eldest: MutableMap.MutableEntry<Int, Int>?): Boolean {
-			return size > capacity
-		}
-	}
-
-
-	private val cache3  = object : LinkedHashMap<String, Bitmap>(capacity, 0.75f, true) {
-		override fun removeEldestEntry(eldest: MutableMap.MutableEntry<String, Bitmap>?): Boolean {
-			return size> capacity
-		}
-	}
-
-	fun get(key: String) : Bitmap? {
-		return cache3.getOrDefault(key, null)
-	}
-
-	fun put(key: String, value: Bitmap) {
-		cache3[key] = value
-	}
 }

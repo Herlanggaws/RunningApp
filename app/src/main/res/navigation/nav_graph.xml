@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/setupFragment">
 
     <fragment
         android:id="@+id/FirstFragment"
@@ -24,5 +24,37 @@
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/runFragment"
+        android:name="com.herlanggaws.runningapp.ui.fragments.RunFragment"
+        android:label="RunFragment" >
+        <action
+            android:id="@+id/action_runFragment_to_trackingFragment"
+            app:destination="@id/trackingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.herlanggaws.runningapp.ui.fragments.SettingsFragment"
+        android:label="SettingsFragment" />
+    <fragment
+        android:id="@+id/setupFragment"
+        android:name="com.herlanggaws.runningapp.ui.fragments.SetupFragment"
+        android:label="SetupFragment" >
+        <action
+            android:id="@+id/action_setupFragment_to_runFragment"
+            app:destination="@id/runFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/statisticFragment"
+        android:name="com.herlanggaws.runningapp.ui.fragments.StatisticFragment"
+        android:label="StatisticFragment" />
+    <fragment
+        android:id="@+id/trackingFragment"
+        android:name="com.herlanggaws.runningapp.ui.fragments.TrackingFragment"
+        android:label="TrackingFragment" >
+        <action
+            android:id="@+id/action_trackingFragment_to_runFragment"
+            app:destination="@id/runFragment" />
     </fragment>
 </navigation>

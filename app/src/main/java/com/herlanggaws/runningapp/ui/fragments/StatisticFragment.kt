@@ -4,6 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.herlanggaws.runningapp.R
 import com.herlanggaws.runningapp.ui.MainViewModel
+import com.herlanggaws.runningapp.ui.viewmodels.StatisticViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 /**
@@ -14,5 +15,5 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class StatisticFragment: Fragment(R.layout.fragment_statistic) {
 
-	private val viewModel: MainViewModel by viewModels()
+	private val viewModel: StatisticViewModel by viewModels()
 }
